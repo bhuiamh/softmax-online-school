@@ -4,9 +4,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Digitosys-Dashboard",
+  title: "Softmax Online School",
+
   description:
-    "It is a job task form Digitosys. In here I made a dashboard using Next.js",
+    "Welcome to the largest educational platform for Diploma Student",
 };
 
 export default function RootLayout({ children }) {

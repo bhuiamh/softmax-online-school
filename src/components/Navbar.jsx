@@ -55,10 +55,13 @@ const Navbar = () => {
         <Link href="/">Home</Link>
       </li>
       <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-        <Link href="/instructors">Instructors</Link>
+        <Link href="/instructors">Classes</Link>
       </li>
       <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-        <Link href="/classes">Classes</Link>
+        <Link href="/classes">Instructors</Link>
+      </li>
+      <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
+        <Link href="/classes">Courses</Link>
       </li>
       {user ? (
         <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
@@ -71,7 +74,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar fixed z-10 text-green-500 bg-white-500 shadow-xl hover:shadow-2xl duration-300">
+      <div className="navbar fixed text-green-500 bg-white-500 shadow-xl hover:shadow-2xl duration-300">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
