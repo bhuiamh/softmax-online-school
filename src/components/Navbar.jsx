@@ -73,8 +73,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <>
-      <div className="navbar fixed text-green-500 bg-white-500 shadow-xl hover:shadow-2xl duration-300">
+    <div className="fixed w-full bg-white shadow-xl hover:shadow-2xl duration-300 z-20 ">
+      <div className="max-w-screen-xl mx-auto navbar text-green-500">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -148,7 +148,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

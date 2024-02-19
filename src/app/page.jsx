@@ -1,8 +1,5 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Banner from "@/components/Banner";
 import Head from "next/head";
-import Link from "next/link";
-
 export default function Home() {
   return (
     <div className="">
@@ -11,11 +8,7 @@ export default function Home() {
         <link rel="icon" href="/logo/logo.png" />
       </Head>
 
-      <Navbar />
-      <div className="pt-32">
-        {" "}
-        <Footer />
-      </div>
+      <Banner />
     </div>
   );
 }
