@@ -3,13 +3,13 @@ import { FaCheck, FaEnvelope } from "react-icons/fa";
 
 const Banner = () => {
   return (
-    <div className="w-full py-24 md:py-32 z-10">
+    <div className="w-full pt-24 md:pt-32 z-10">
       <div className="max-w-screen-xl mx-auto p-6 md:p-10 ">
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-green-500 mb-2 md:mb-4 text-center">
             Welcome to Softmax Online School
           </h1>
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-black mb-6 md:mb-10 text-center">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-700 mb-6 md:mb-10 text-center">
             Level Up Your Skills with Softmax
           </h1>
         </div>
@@ -18,10 +18,10 @@ const Banner = () => {
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
               <FaCheck className="mr-2" /> Pass DUET Entrance Exam!
             </h1>
-            <p className="text-lg font-medium text-green-500">
+            <p className="text-lg text-green-500 font-semibold">
               Ace Physics, Chemistry, Math, & English
             </p>
-            <p>
+            <p className="text-gray-700 font-semibold">
               Want your dream engineering future? This course helps you ace the
               DUET entrance exam! Learn everything you need, from what you can
               take to mastering tough subjects. Expert teachers show you proven
@@ -36,10 +36,10 @@ const Banner = () => {
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
               <FaCheck className="mr-2" /> Become a Polytechnic Star!
             </h1>
-            <p className=" text-lg font-medium text-green-500">
+            <p className=" text-lg text-green-500 font-semibold">
               Get better grades in Engineering Studies
             </p>
-            <p>
+            <p className="text-gray-700 font-semibold">
               Want to be top of your class? This course helps you understand
               even the trickiest engineering subjects! Get clear explanations of
               complex things and learn practical ways to solve problems. Take
@@ -53,10 +53,10 @@ const Banner = () => {
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
               <FaCheck className="mr-2" /> Get Dream Engineering Job!
             </h1>
-            <p className="text-lg font-medium text-green-500">
+            <p className="text-lg text-green-500 font-semibold">
               Become an Assistant or Sub-Assistant Engineer
             </p>
-            <p className="font-semibold">
+            <p className="text-gray-700 font-semibold">
               Ready to launch your engineering career? This course gets you
               job-ready for Assistant or Sub-Assistant Engineer positions! Learn
               all about different engineering fields, master interview
@@ -70,10 +70,10 @@ const Banner = () => {
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
               <FaEnvelope className="mr-2" /> Contact Us
             </h1>
-            <p className="text-lg font-medium text-green-500">
+            <p className="text-lg text-green-500 font-semibold">
               Have Questions? Get in Touch!
             </p>
-            <p className="font-semibold">
+            <p className="text-gray-700 font-semibold">
               Whether you have inquiries about our courses, need assistance, or
               want to explore opportunities, we are here to help! Reach out to
               us for any questions or concerns you may have. Our team is

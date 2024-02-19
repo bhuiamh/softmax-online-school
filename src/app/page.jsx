@@ -1,3 +1,4 @@
+import AboutUs from "@/components/AboutUs";
 import Banner from "@/components/Banner";
 import Head from "next/head";
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       </Head>
 
       <Banner />
+      <AboutUs />
     </div>
   );
 }
