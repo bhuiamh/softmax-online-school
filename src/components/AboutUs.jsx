@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  FaChevronRight,
   FaGraduationCap,
   FaRocket,
   FaUsers,

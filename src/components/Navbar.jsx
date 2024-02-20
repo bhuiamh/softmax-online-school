@@ -1,9 +1,51 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 
 const Navbar = () => {
+  const [classesOpen, setClassesOpen] = useState(false);
+  const [subMenuOpen, setSubMenuOpen] = useState(false);
+  const [jobOpen, setJobOpen] = useState(false);
+  const [jobMenuOpen, setJobMenuOpen] = useState(false);
+
+  // handle Classes
+  const handleOnMouseOver = () => {
+    setClassesOpen(true);
+  };
+  const handleOnMouseOut = () => {
+    setTimeout(() => {
+      setClassesOpen(false);
+    }, 2000); // 2000 milliseconds or 2 seconds
+  };
+  const handleOnClick = () => {
+    setClassesOpen(!classesOpen);
+  };
+  const handleOnMouseOverSubMenu = () => {
+    setSubMenuOpen(true);
+  };
+  const handleOutMouseOverSubMenu = () => {
+    setSubMenuOpen(false);
+  };
+
+  // handle job menu
+  const handleOnMouseOverJob = () => {
+    setJobOpen(true);
+  };
+
+  const handleOnMouseOutJob = () => {
+    setTimeout(() => {
+      setJobOpen(false);
+    }, 2000);
+  };
+  const handleOnMouseOverJobMenu = () => {
+    setJobMenuOpen(true);
+  };
+  const handleOutMouseOverJobMenu = () => {
+    setJobMenuOpen(false);
+  };
+
   const user = false;
   //   Swal.fire({
   //     title: "Are you sure?",
@@ -51,29 +93,104 @@ const Navbar = () => {
 
   const navOptions = (
     <>
-      <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-        <Link href="/">Home</Link>
-      </li>
-      <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-        <Link href="/instructors">Classes</Link>
-      </li>
-      <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-        <Link href="/classes">Instructors</Link>
-      </li>
-      <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-        <Link href="/classes">Courses</Link>
-      </li>
+      <Link
+        className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-500 hover:text-green-700"
+        href="/"
+      >
+        Home
+      </Link>
+
+      <div>
+        <Link
+          className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-500 hover:text-green-700 relative       "
+          onMouseOver={handleOnMouseOver}
+          onMouseOut={handleOnMouseOut}
+          onClick={handleOnClick}
+          href="/classes"
+        >
+          Classes
+        </Link>
+        {(classesOpen || subMenuOpen) && (
+          <div
+            onMouseOver={handleOnMouseOverSubMenu}
+            onMouseOut={handleOutMouseOverSubMenu}
+            className="absolute left-28 lg:left-[42%] top-15 w-48 bg-slate-100 rounded-md shadow-xl hover:shadow-2xl space-y-1 p-4 grid grid-cols-1 items-center justify-center"
+          >
+            <Link
+              className="font-bold text-base  font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+              href="/"
+            >
+              Polytechnic
+            </Link>
+
+            <Link
+              className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+              href="/"
+            >
+              DUET Admission
+            </Link>
+
+            <Link
+              onMouseOver={handleOnMouseOverJob}
+              onMouseOut={handleOnMouseOutJob}
+              className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent relative"
+              href="/"
+            >
+              Job Preparation
+            </Link>
+            {(jobOpen || jobMenuOpen) && (
+              <div
+                onMouseOver={handleOnMouseOverJobMenu}
+                onMouseOut={handleOutMouseOverJobMenu}
+                className="absolute top-24 w-56 left-8 bg-slate-100 rounded-md shadow-xl hover:shadow-2xl space-y-1 p-4 grid grid-cols-1"
+              >
+                <Link
+                  className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+                  href="/"
+                >
+                  Sub Assistant Engineer
+                </Link>
+
+                <Link
+                  className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+                  href="/"
+                >
+                  Assistant Engineer
+                </Link>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      <Link
+        className="font-bold text-base lg:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+        href="/instructors"
+      >
+        Instructors
+      </Link>
+
+      <Link
+        className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+        href="/courses"
+      >
+        Courses
+      </Link>
+
       {user ? (
-        <li className="font-bold text-base font-[lilita one] md:text-xl text-green-500">
-          <Link href="/dashboard/profile">Dashboard</Link>
-        </li>
+        <Link
+          className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+          href="/dashboard/profile"
+        >
+          Dashboard
+        </Link>
       ) : (
         <></>
       )}
     </>
   );
   return (
-    <div className="fixed w-full bg-white shadow-xl hover:shadow-2xl duration-300 z-20 ">
+    <div className="fixed w-full bg-slate-100 shadow-xl hover:shadow-2xl duration-300 z-20 ">
       <div className="max-w-screen-xl mx-auto navbar text-green-500">
         <div className="navbar-start">
           <div className="dropdown">
@@ -93,12 +210,12 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul
+            <div
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 grid"
             >
               {navOptions}
-            </ul>
+            </div>
           </div>
           <Link href="/" className="flex items-center pl-8">
             <img className="h-10 md:h-16" src="/logo/logo.png" />
