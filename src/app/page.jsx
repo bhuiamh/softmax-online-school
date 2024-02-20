@@ -1,6 +1,8 @@
 import AboutUs from "@/components/AboutUs";
 import Banner from "@/components/Banner";
 import Head from "next/head";
+import ClassCard from "./classes/ClassCard";
+import SectionTitle from "@/components/SectionTitle";
 export default function Home() {
   return (
     <div className="">
@@ -10,6 +12,11 @@ export default function Home() {
       </Head>
 
       <Banner />
+
+      <div className="mt-6 md:mt-10">
+        <ClassCard />
+      </div>
+
       <AboutUs />
     </div>
   );
