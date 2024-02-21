@@ -11,9 +11,7 @@ export default function DashboardLayout({ children }) {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   const userPresence = localStorage.getItem("isUserPresent");
-
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -31,7 +29,7 @@ export default function DashboardLayout({ children }) {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem("isUserPresent");
-
+        router.push("/");
         Swal.fire({
           icon: "success",
           title: "You have successfully signed out",
@@ -46,12 +44,21 @@ export default function DashboardLayout({ children }) {
     });
   };
 
-  if (
-    userPresence !== "admin" ||
-    userPresence !== "instructor" ||
-    userPresence !== "student"
-  ) {
-    router.push("/");
+  async function handleAuthentication() {
+    // Fetch data you need (replace with your actual logic)
+
+    // Now check user role and redirect if needed
+    const userPresence = localStorage.getItem("isUserPresent");
+    if (
+      userPresence !== "admin" &&
+      userPresence !== "instructor" &&
+      userPresence !== "student"
+    ) {
+      router.push("/");
+    }
+
+    // Do something with fetchedData
+    // ...
   }
   const dashboardItem = (
     <>
@@ -105,6 +112,7 @@ export default function DashboardLayout({ children }) {
       </Link>
     </>
   );
+  handleAuthentication();
   return (
     <section className=" w-full">
       <div className="h-screen max-w-screen-xl flex flex-col md:flex-row mx-auto">
