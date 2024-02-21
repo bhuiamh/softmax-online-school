@@ -45,35 +45,44 @@ const PolytechnicClasses = () => {
                   />
                 </figure>
                 <div className="p-5">
-                  <h2 className="text-xl font-bold text-green-500">
+                  <h2 className="text-base md:text-xl font-bold text-green-500">
                     {polytechnicData.name}
                   </h2>
                   <div className="mx-auto">
                     <h1 className="text-base font-bold mb-4 text-gray-900">
                       Choose the Semester You Want to Purchase
                     </h1>
-                    <div className=" flex flex-wrap gap-1">
+                    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-1">
                       {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                         <div
                           key={num}
                           onClick={() => handleClick(num)}
-                          className={`border-green-500 border-2 p-2 mx-auto cursor-pointer h-10 w-10 items-center rounded-md justify-center flex ${
+                          className={`border-green-500 border-2 p-2 mx-auto cursor-pointer h-10 w-10 rounded-md justify-center flex ${
                             selectedDiv.includes(num) ? "bg-green-500" : ""
                           }`}
                         >
                           <p className="font-semibold">
                             {num === 1
-                              ? "1st"
+                              ? "1"
                               : num === 2
-                              ? "2nd"
+                              ? "2"
                               : num === 3
-                              ? "3rd"
-                              : `${num}th`}{" "}
+                              ? "3"
+                              : `${num}`}{" "}
+                          </p>
+                          <p className="font-semibold text-[8px]">
+                            {num === 1
+                              ? "st"
+                              : num === 2
+                              ? "nd"
+                              : num === 3
+                              ? "rd"
+                              : `th`}{" "}
                           </p>
                         </div>
                       ))}
                     </div>
-                    <div className="mt-8">
+                    <div className="mt-4 md:mt-8">
                       <p className="text-xl font-semibold text-gray-900">
                         Total Price:{" "}
                         <span className="text-green-500">

@@ -32,7 +32,7 @@ const AboutUs = () => {
             <div className="bg-white/10 flex items-center shadow-xl hover:shadow-2xl p-5 h-64 md:h-48 rounded duration-300">
               <FaGraduationCap
                 size={400}
-                className="text-green-500 group-hover:text-green-700 duration-300"
+                className="hidden md:block text-green-500 group-hover:text-green-700 duration-300"
               />
               <div className="ml-3">
                 <h3 className="text-xl font-bold text-green-500">
@@ -50,7 +50,7 @@ const AboutUs = () => {
             <div className="bg-white/10 flex items-center shadow-xl hover:shadow-2xl p-5 h-64 md:h-48 rounded duration-300 group">
               <FaRocket
                 size={400}
-                className="text-green-500 group-hover:text-green-700 duration-300"
+                className="hidden md:block text-green-500 group-hover:text-green-700 duration-300"
               />
               <div className="ml-3">
                 <h3 className="text-xl font-bold text-green-500">
@@ -94,7 +94,10 @@ const AboutUs = () => {
               </li>
             </ul>
           </div>
-          <a href="#_" className="mt-6 relative inline-block text-lg group">
+          <a
+            href="classes"
+            className="mt-6 relative inline-block text-lg group"
+          >
             <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-green-500 transition-colors duration-300 ease-out border-2 border-green-500 rounded-lg group-hover:text-white">
               <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-white"></span>
               <span className="absolute left-0 w-[270px] h-[270px] -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-green-500 group-hover:-rotate-180 ease"></span>

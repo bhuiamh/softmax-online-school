@@ -3,6 +3,8 @@ import Banner from "@/components/Banner";
 import Head from "next/head";
 import ClassCard from "./classes/ClassCard";
 import SectionTitle from "@/components/SectionTitle";
+import PolytechnicClasses from "./classes/polytechnic/PolytechnicClasses";
+import Contact from "./contact-us/Contact";
 export default function Home() {
   return (
     <div className="">
@@ -16,8 +18,15 @@ export default function Home() {
       <div className="mt-6 md:mt-10">
         <ClassCard />
       </div>
-
-      <AboutUs />
+      <div className="mt-6 md:mt-10">
+        <PolytechnicClasses />
+      </div>
+      <div className="mt-6 md:mt-10">
+        <AboutUs />
+      </div>
+      <div className="mt-6 md:mt-10">
+        <Contact />
+      </div>
     </div>
   );
 }

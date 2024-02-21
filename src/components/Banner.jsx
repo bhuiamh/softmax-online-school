@@ -16,7 +16,8 @@ const Banner = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="border-2 border-green-500 p-6 rounded hover:scale-105 duration-500">
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
-              <FaCheck className="mr-2" /> Pass DUET Entrance Exam!
+              <FaCheck className="mr-2 hidden md:block" /> Pass DUET Entrance
+              Exam!
             </h1>
             <p className="text-lg text-green-500 font-semibold">
               Ace Physics, Chemistry, Math, & English
@@ -34,7 +35,8 @@ const Banner = () => {
           {/* Academic Course */}
           <div className="border-2 border-green-500 p-6 rounded hover:scale-105 duration-500">
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
-              <FaCheck className="mr-2" /> Become a Polytechnic Star!
+              <FaCheck className="mr-2 hidden md:block" /> Become a Polytechnic
+              Star!
             </h1>
             <p className=" text-lg text-green-500 font-semibold">
               Get better grades in Engineering Studies
@@ -51,7 +53,8 @@ const Banner = () => {
           {/* Job Preparation */}
           <div className="border-2 border-green-500 p-6 rounded hover:scale-105 duration-500">
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
-              <FaCheck className="mr-2" /> Get Dream Engineering Job!
+              <FaCheck className="mr-2 hidden md:block" /> Get Dream Engineering
+              Job!
             </h1>
             <p className="text-lg text-green-500 font-semibold">
               Become an Assistant or Sub-Assistant Engineer
@@ -68,7 +71,7 @@ const Banner = () => {
           </div>
           <div className="border-2 border-green-500 p-6 rounded hover:scale-105 duration-500">
             <h1 className="text-2xl font-bold lg:text-3xl flex items-center">
-              <FaEnvelope className="mr-2" /> Contact Us
+              <FaEnvelope className="mr-2 hidden md:block" /> Contact Us
             </h1>
             <p className="text-lg text-green-500 font-semibold">
               Have Questions? Get in Touch!
@@ -80,7 +83,10 @@ const Banner = () => {
               dedicated to providing support and guidance to help you succeed in
               your engineering journey.
             </p>
-            <a href="#_" className="mt-2 relative inline-block text-lg group">
+            <a
+              href="contact-us"
+              className="mt-2 relative inline-block text-lg group"
+            >
               <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-green-500 transition-colors duration-300 ease-out border-2 border-green-500 rounded-lg group-hover:text-white">
                 <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-white"></span>
                 <span className="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-green-500 group-hover:-rotate-180 ease"></span>

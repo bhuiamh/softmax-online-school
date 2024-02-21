@@ -172,7 +172,7 @@ const Navbar = () => {
 
       <Link
         className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
-        href="/courses"
+        href="/contact-us"
       >
         Contact
       </Link>
