@@ -47,7 +47,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="bg-white/10 flex items-center shadow-xl hover:shadow-2xl p-5 h-64 md:h-48 rounded duration-300 group">
+            <div className="bg-white/10 flex items-center shadow-xl hover:shadow-2xl p-5 h-72 md:h-48 rounded duration-300 group">
               <FaRocket
                 size={400}
                 className="hidden md:block text-green-500 group-hover:text-green-700 duration-300"
