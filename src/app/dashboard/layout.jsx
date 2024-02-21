@@ -30,11 +30,8 @@ export default function DashboardLayout({ children }) {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        // Assuming this is a defined function to handle logout logic
+        localStorage.removeItem("isUserPresent");
 
-        localStorage.removeItem("isUserPresent"); // (no typo)
-
-        // Handle successful logout:
         Swal.fire({
           icon: "success",
           title: "You have successfully signed out",

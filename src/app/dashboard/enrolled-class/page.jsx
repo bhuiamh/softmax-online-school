@@ -2,10 +2,9 @@ import React from "react";
 
 const page = () => {
   const data = [
-    { id: 1, name: "John Doe", progress: 25, isOpen: true },
-    { id: 2, name: "Jane Smith", progress: 50, isOpen: false },
-    { id: 3, name: "Michael Johnson", progress: 75, isOpen: true },
-    // ... more data
+    { id: 1, name: "Polytechnic Classes", progress: 25, isOpen: true },
+    { id: 2, name: "DUET Preparation", progress: 50, isOpen: false },
+    { id: 3, name: "SAE Preparation", progress: 75, isOpen: true },
   ];
   return (
     <div className="max-w-md mx-auto bg-white rounded-md shadow-md">

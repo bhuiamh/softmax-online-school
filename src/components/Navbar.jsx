@@ -18,7 +18,7 @@ const Navbar = () => {
   const handleOnMouseOut = () => {
     setTimeout(() => {
       setClassesOpen(false);
-    }, 2000); // 2000 milliseconds or 2 seconds
+    }, 2000);
   };
   const handleOnClick = () => {
     setClassesOpen(!classesOpen);
@@ -64,11 +64,7 @@ const Navbar = () => {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        // Assuming this is a defined function to handle logout logic
-
-        localStorage.removeItem("isUserPresent"); // (no typo)
-
-        // Handle successful logout:
+        localStorage.removeItem("isUserPresent");
         Swal.fire({
           icon: "success",
           title: "You have successfully signed out",
@@ -83,7 +79,6 @@ const Navbar = () => {
     });
   };
 
-  console.log(userPresence, "From Navbar");
   const navOptions = (
     <>
       <Link

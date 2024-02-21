@@ -5,7 +5,35 @@ import React from "react";
 const Contact = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted", "<<<<<<<<<<<<<summitted");
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to send message?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonButtonText: "Yes, Send",
+      cancelButtonButtonText: "Cancel",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        localStorage.removeItem("isUserPresent");
+
+        Swal.fire({
+          icon: "success",
+          title: "Message Send Successfully",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      }
+    });
   };
   return (
     <div className="w-full">

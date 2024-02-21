@@ -1,10 +1,12 @@
 "use client";
 import SectionTitle from "@/components/SectionTitle";
 import { polytechnicClassesData } from "@/data/ClassesData";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 const PolytechnicClasses = () => {
+  const router = useRouter();
   const [selectedDiv, setSelectedDiv] = useState([]);
   const initialPrice = 0;
   const priceIncrement = 500;
@@ -27,16 +29,35 @@ const PolytechnicClasses = () => {
   const handleEnroll = async () => {
     const userPresence = localStorage.getItem("isUserPresent");
 
-    if (userPresence === "student") {
-      Swal.fire({
-        icon: "success",
-        title: "Class Enrolled Successful",
-      });
+    if (
+      userPresence === "student" ||
+      userPresence === "admin" ||
+      userPresence === "instructor"
+    ) {
+      if (userPresence === "student") {
+        Swal.fire({
+          icon: "success",
+          title: "Class Enrolled Successful",
+        });
+      }
     } else {
       Swal.fire({
-        icon: "error",
-        title: "Class Enrolled Failed",
-        text: "The Class is only for Students",
+        title: "Please Login",
+        text: "To enroll the class you have to login",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonButtonText: "Yes, Login",
+        cancelButtonButtonText: "Cancel",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          router.push("/login");
+        }
       });
     }
   };

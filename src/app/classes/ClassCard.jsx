@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link"; // For Details button navigation
+import Link from "next/link";
 import { classesData } from "@/data/ClassesData";
 import { PiStudentFill } from "react-icons/pi";
 import { MdOutlineSentimentSatisfiedAlt } from "react-icons/md";
