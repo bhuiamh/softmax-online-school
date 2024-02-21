@@ -118,7 +118,7 @@ const Navbar = () => {
           >
             <Link
               className="font-bold text-base  font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
-              href="/"
+              href="/classes/polytechnic"
             >
               Polytechnic
             </Link>
@@ -174,7 +174,7 @@ const Navbar = () => {
         className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
         href="/courses"
       >
-        Courses
+        Contact
       </Link>
 
       {user ? (

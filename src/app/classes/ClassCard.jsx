@@ -29,7 +29,7 @@ const ClassCard = () => {
           {classesData.map((data, index) => (
             <div
               key={index}
-              className="bg-white/90 hover:bg-white duration-300 rounded-lg shadow-md hover:shadow-xl transition-all pb-16 relative"
+              className="bg-white/90 hover:bg-white duration-300 rounded-lg shadow-md hover:shadow-xl transition-all pb-16 relative md:hover:scale-[1.01]"
             >
               <img
                 src={data.imagePath}
@@ -61,25 +61,25 @@ const ClassCard = () => {
                 <div className="flex justify-between">
                   {data.price > 0 && (
                     <div className="flex items-center font-bold">
-                      <span className="text-green-500 text-2xl">
+                      <span className="text-green-500 text-base md:text-2xl">
                         <span className="text-gray-900"> ৳</span>{" "}
                         {data.price.toLocaleString()}
                         {` `}
                         {data.discount > 0 && (
-                          <span className="line-through text-red-500 font-normal text-base mr-2">
+                          <span className="line-through text-red-500 font-normal text-[14px] md:text-base mr-2">
                             {data.price + data.discount}
                           </span>
                         )}
                       </span>
                     </div>
                   )}
-                  <div className="text-green-500 text-2xl flex items-center font-bold">
+                  <div className="text-green-500 text-base md:text-2xl flex items-center font-bold">
                     <span className="text-gray-900 text-3xl">
                       <PiStudentFill />
                     </span>{" "}
                     {data.enrolled}+{" "}
                   </div>
-                  <div className="text-green-500 text-2xl flex items-center font-bold">
+                  <div className="text-green-500 text-base md:text-2xl flex items-center font-bold">
                     <MdOutlineSentimentSatisfiedAlt className="text-gray-900 text-3xl" />{" "}
                     {data.satisfactionRate}%
                   </div>

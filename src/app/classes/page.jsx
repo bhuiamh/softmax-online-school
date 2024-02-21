@@ -4,7 +4,7 @@ import ClassCard from "./ClassCard";
 const page = () => {
   return (
     <div className="pt-32">
-      Hello Page |<ClassCard />
+      <ClassCard />
     </div>
   );
 };
