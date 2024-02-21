@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
 export default function DashboardLayout({ children }) {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -47,11 +49,28 @@ export default function DashboardLayout({ children }) {
     });
   };
 
+  if (
+    userPresence !== "admin" ||
+    userPresence !== "instructor" ||
+    userPresence !== "student"
+  ) {
+    router.push("/");
+  }
   const dashboardItem = (
     <>
       <Link onClick={toggleMenu} href="/dashboard/profile">
         Profile
       </Link>
+      {userPresence === "student" && (
+        <Link onClick={toggleMenu} href="/dashboard/enrolled-class">
+          Enrolled Classes
+        </Link>
+      )}
+      {userPresence === "student" && (
+        <Link onClick={toggleMenu} href="/dashboard/payment-history">
+          Payment History
+        </Link>
+      )}
       {userPresence === "admin" && (
         <Link onClick={toggleMenu} href="/dashboard/manage">
           Manage User
@@ -65,6 +84,16 @@ export default function DashboardLayout({ children }) {
       {userPresence === "admin" && (
         <Link onClick={toggleMenu} href="/dashboard/manage">
           Manage Class
+        </Link>
+      )}
+      {userPresence === "instructor" && (
+        <Link onClick={toggleMenu} href="/dashboard/manage">
+          Manage Class
+        </Link>
+      )}
+      {userPresence === "instructor" && (
+        <Link onClick={toggleMenu} href="/dashboard/add-class">
+          Add A Class
         </Link>
       )}
       <Link onClick={toggleMenu} href="/">
