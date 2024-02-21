@@ -80,7 +80,7 @@ const LoginPage = () => {
           <button
             type="button"
             onClick={toggleModal}
-            className="bg-green-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-600"
+            className="bg-green-700 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-900"
           >
             Credentials
           </button>
@@ -102,7 +102,7 @@ const LoginPage = () => {
               <p>Password: softmax</p>
               <button
                 onClick={toggleModal}
-                className="mt-6 bg-green-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-600"
+                className="mt-6 bg-green-700 text-white px-4 py-2 rounded-md shadow-md hover:bg-green-900"
               >
                 Close
               </button>
@@ -119,7 +119,7 @@ const LoginPage = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-3.5 py-2 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500"
+            className="w-full px-3.5 py-2 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700"
           />
         </div>
         <div className="mb-4 relative">
@@ -131,7 +131,7 @@ const LoginPage = () => {
             placeholder="Password"
             value={formData.password}
             onChange={handleInputChange}
-            className="w-full px-3.5 py-2 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500"
+            className="w-full px-3.5 py-2 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700"
           />
           <button
             type="button"
@@ -143,9 +143,9 @@ const LoginPage = () => {
         </div>
 
         <div className="w-full flex items-center mt-6 md:mt-10">
-          <div className="w-1/2 h-[1px] bg-green-500"></div>
+          <div className="w-1/2 h-[1px] bg-green-700"></div>
           <div className="mx-2">Or</div>
-          <div className="w-1/2 h-[1px] bg-green-500"></div>
+          <div className="w-1/2 h-[1px] bg-green-700"></div>
         </div>
         <div className="w-full flex space-x-5 mt-2">
           <button className="flex items-center justify-center w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-sm font-semibold text-[#FBBC05] shadow-sm hover:bg-[#FBBC05] hover:text-white border-2 border-[#FBBC05] duration-500">
@@ -158,15 +158,15 @@ const LoginPage = () => {
           </button>
         </div>
         <div className="flex items-center justify-center mt-4">
-          <h1 className="text-green-500">New to Softmax Online School?</h1>
-          <Link className="ml-1 text-green-700" href="signup">
+          <h1 className="text-green-700">New to Softmax Online School?</h1>
+          <Link className="ml-1 text-green-900" href="signup">
             Create an account
           </Link>
         </div>
         <div className="mt-6 md:mt-10">
           <button
             type="submit"
-            className="w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-sm font-semibold text-green-500 shadow-sm hover:bg-green-500 hover:text-white border-2 border-green-500 duration-500"
+            className="w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-sm font-semibold text-green-700 shadow-sm hover:bg-green-700 hover:text-white border-2 border-green-700 duration-500"
           >
             Login
           </button>

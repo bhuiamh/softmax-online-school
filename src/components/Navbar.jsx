@@ -48,7 +48,6 @@ const Navbar = () => {
   };
   const userPresence = localStorage.getItem("isUserPresent");
 
-  const user = false;
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -88,7 +87,7 @@ const Navbar = () => {
   const navOptions = (
     <>
       <Link
-        className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-500 hover:text-green-700"
+        className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-700 hover:text-green-900"
         href="/"
       >
         Home
@@ -96,7 +95,7 @@ const Navbar = () => {
 
       <div>
         <Link
-          className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-500 hover:text-green-700 relative       "
+          className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-700 hover:text-green-900 relative       "
           onMouseOver={handleOnMouseOver}
           onMouseOut={handleOnMouseOut}
           onClick={handleOnClick}
@@ -111,14 +110,14 @@ const Navbar = () => {
             className="absolute left-28 lg:left-[42%] top-15 w-48 bg-slate-100 rounded-md shadow-xl hover:shadow-2xl space-y-1 p-4 grid grid-cols-1 items-center justify-center"
           >
             <Link
-              className="font-bold text-base  font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+              className="font-bold text-base  font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
               href="/classes/polytechnic"
             >
               Polytechnic
             </Link>
 
             <Link
-              className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+              className="font-bold text-base font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
               href="/classes/duet-admission"
             >
               DUET Admission
@@ -127,7 +126,7 @@ const Navbar = () => {
             <Link
               onMouseOver={handleOnMouseOverJob}
               onMouseOut={handleOnMouseOutJob}
-              className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent relative"
+              className="font-bold text-base font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent relative"
               href="/"
             >
               Job Preparation
@@ -139,14 +138,14 @@ const Navbar = () => {
                 className="absolute top-24 w-56 left-8 bg-slate-100 rounded-md shadow-xl hover:shadow-2xl space-y-1 p-4 grid grid-cols-1"
               >
                 <Link
-                  className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+                  className="font-bold text-base font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
                   href="/classes/job-preparation/sae"
                 >
                   Sub Assistant Engineer
                 </Link>
 
                 <Link
-                  className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+                  className="font-bold text-base font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
                   href="/classes/job-preparation/ae"
                 >
                   Assistant Engineer
@@ -158,22 +157,24 @@ const Navbar = () => {
       </div>
 
       <Link
-        className="font-bold text-base lg:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+        className="font-bold text-base lg:text-xl mx-2 font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
         href="/instructors"
       >
         Instructors
       </Link>
 
       <Link
-        className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+        className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
         href="/contact-us"
       >
         Contact
       </Link>
 
-      {user ? (
+      {userPresence === "admin" ||
+      userPresence === "student" ||
+      userPresence === "instructor" ? (
         <Link
-          className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
+          className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
           href="/dashboard/profile"
         >
           Dashboard
@@ -185,7 +186,7 @@ const Navbar = () => {
   );
   return (
     <div className="fixed w-full bg-slate-100 shadow-xl hover:shadow-2xl duration-300 z-20 ">
-      <div className="max-w-screen-xl mx-auto navbar text-green-500">
+      <div className="max-w-screen-xl mx-auto navbar text-green-700">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -260,7 +261,7 @@ const Navbar = () => {
               </ul>
             </div>
           ) : (
-            <p className="font-bold decoration-none font-[lilita one] md:text-xl text-green-500">
+            <p className="font-bold decoration-none font-[lilita one] md:text-xl text-green-700">
               <Link href="/login">Login</Link>
             </p>
           )}

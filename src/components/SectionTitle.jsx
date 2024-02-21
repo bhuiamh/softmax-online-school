@@ -7,7 +7,7 @@ const SectionTitle = ({ title, subTitle }) => {
       {subTitle && (
         <p className="text-xl font-medium text-gray-700">{subTitle}</p>
       )}
-      <p className="w-32 bg-green-500 h-1"></p>
+      <p className="w-32 bg-green-700 h-1"></p>
     </div>
   );
 };

@@ -24,14 +24,14 @@ const Contact = () => {
                   name="first-name"
                   id="first-name"
                   placeholder="First Name *"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500 focus:scale-105 duration-300"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700 focus:scale-105 duration-300"
                 />
                 <input
                   type="text"
                   name="last-name"
                   id="last-name"
                   placeholder="Last Name"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500 focus:scale-105 duration-300"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700 focus:scale-105 duration-300"
                 />
               </div>
 
@@ -42,7 +42,7 @@ const Contact = () => {
                   name="polytechnic"
                   id="company"
                   placeholder="Polytechnic Institute Name *"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500 focus:scale-105 duration-300"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700 focus:scale-105 duration-300"
                 />
               </div>
               <div className="mt-2 grid grid-cols-2 gap-6">
@@ -51,7 +51,7 @@ const Contact = () => {
                   name="email"
                   id="email"
                   placeholder="Email"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500 focus:scale-105 duration-300"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700 focus:scale-105 duration-300"
                 />
 
                 <input
@@ -60,7 +60,7 @@ const Contact = () => {
                   name="phone-number"
                   id="phone-number"
                   placeholder="Phone Number *"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500 focus:scale-105 duration-300"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700 focus:scale-105 duration-300"
                 />
               </div>
 
@@ -68,7 +68,7 @@ const Contact = () => {
                 <select
                   id="technology"
                   name="technology"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700"
                 >
                   <option>Select Your Department</option>
                   <option>Electrical Technology</option>
@@ -86,7 +86,7 @@ const Contact = () => {
                 <select
                   id="query-for"
                   name="query-for"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700"
                 >
                   <option>Who are you</option>
                   <option>Polytechnic Student</option>
@@ -103,7 +103,7 @@ const Contact = () => {
                   id="message"
                   rows={4}
                   placeholder="Type Your Message Here"
-                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-500 focus:outline-none focus:border-b-2 focus:border-green-500 focus:scale-105 duration-300"
+                  className="w-full px-3.5 py-2 text-black font-semibold placeholder-gray-300 sm:text-sm sm:leading-6 border-b-2 border-green-700 focus:outline-none focus:border-b-2 focus:border-green-700 focus:scale-105 duration-300"
                   defaultValue={""}
                 />
               </div>
@@ -111,7 +111,7 @@ const Contact = () => {
               <div className="mt-10">
                 <input
                   type="submit"
-                  className="w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-sm font-semibold text-green-500 shadow-sm hover:bg-green-500 hover:text-white border-2 border-green-500 duration-500"
+                  className="w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-sm font-semibold text-green-700 shadow-sm hover:bg-green-700 hover:text-white border-2 border-green-700 duration-500"
                 />
               </div>
             </div>
