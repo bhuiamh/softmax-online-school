@@ -125,7 +125,7 @@ const Navbar = () => {
 
             <Link
               className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
-              href="/"
+              href="/classes/duet-admission"
             >
               DUET Admission
             </Link>
@@ -146,14 +146,14 @@ const Navbar = () => {
               >
                 <Link
                   className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
-                  href="/"
+                  href="/classes/job-preparation/sae"
                 >
                   Sub Assistant Engineer
                 </Link>
 
                 <Link
                   className="font-bold text-base font-[lilita one] text-green-500 hover:text-green-700 bg-transparent hover:bg-transparent"
-                  href="/"
+                  href="/classes/job-preparation/ae"
                 >
                   Assistant Engineer
                 </Link>
