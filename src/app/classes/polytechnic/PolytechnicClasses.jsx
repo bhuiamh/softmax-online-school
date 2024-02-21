@@ -2,6 +2,7 @@
 import SectionTitle from "@/components/SectionTitle";
 import { polytechnicClassesData } from "@/data/ClassesData";
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const PolytechnicClasses = () => {
   const [selectedDiv, setSelectedDiv] = useState([]);
@@ -23,7 +24,22 @@ const PolytechnicClasses = () => {
     });
     return totalPrice;
   };
+  const handleEnroll = async () => {
+    const userPresence = localStorage.getItem("isUserPresent");
 
+    if (userPresence === "student") {
+      Swal.fire({
+        icon: "success",
+        title: "Class Enrolled Successful",
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Class Enrolled Failed",
+        text: "The Class is only for Students",
+      });
+    }
+  };
   return (
     <div className="w-full">
       <div className="max-w-screen-xl mx-auto p-6 md:p-10 ">
@@ -92,7 +108,10 @@ const PolytechnicClasses = () => {
                     </div>
                   </div>
                   <div className="card-actions justify-end mt-2">
-                    <button className=" relative inline-block text-lg group">
+                    <button
+                      onClick={handleEnroll}
+                      className=" relative inline-block text-lg group"
+                    >
                       <span className="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-green-500 transition-colors duration-300 ease-out border-2 border-green-500 rounded-lg group-hover:text-white">
                         <span className="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-white"></span>
                         <span className="absolute left-0 w-[270px] h-[270px] -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-green-500 group-hover:-rotate-180 ease"></span>

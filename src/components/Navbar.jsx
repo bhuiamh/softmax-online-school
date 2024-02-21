@@ -1,15 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [classesOpen, setClassesOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [jobOpen, setJobOpen] = useState(false);
   const [jobMenuOpen, setJobMenuOpen] = useState(false);
-
+  const [loggedUser, setLoggedUser] = useState(null);
   // handle Classes
   const handleOnMouseOver = () => {
     setClassesOpen(true);
@@ -45,52 +46,45 @@ const Navbar = () => {
   const handleOutMouseOverJobMenu = () => {
     setJobMenuOpen(false);
   };
+  const userPresence = localStorage.getItem("isUserPresent");
 
   const user = false;
-  //   Swal.fire({
-  //     title: "Are you sure?",
-  //     text: "Do you want to log out?",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonText: "Yes, log out",
-  //     cancelButtonText: "Cancel",
-  //     showClass: {
-  //       popup: "animate__animated animate__fadeInDown",
-  //     },
-  //     hideClass: {
-  //       popup: "animate__animated animate__fadeOutUp",
-  //     },
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       logOut()
-  //         .then(() => {
-  //           Swal.fire({
-  //             icon: "success",
-  //             title: "You have successfully signed out",
-  //             showClass: {
-  //               popup: "animate__animated animate__fadeInDown",
-  //             },
-  //             hideClass: {
-  //               popup: "animate__animated animate__fadeOutUp",
-  //             },
-  //           });
-  //         })
-  //         .catch((error) => {
-  //           Swal.fire({
-  //             icon: "error",
-  //             title: "Something went wrong",
-  //             showClass: {
-  //               popup: "animate__animated animate__fadeInDown",
-  //             },
-  //             hideClass: {
-  //               popup: "animate__animated animate__fadeOutUp",
-  //             },
-  //           });
-  //         });
-  //     }
-  //   });
-  // };
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Do you want to log out?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonButtonText: "Yes, log out",
+      cancelButtonButtonText: "Cancel",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Assuming this is a defined function to handle logout logic
 
+        localStorage.removeItem("isUserPresent"); // (no typo)
+
+        // Handle successful logout:
+        Swal.fire({
+          icon: "success",
+          title: "You have successfully signed out",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      }
+    });
+  };
+
+  console.log(userPresence, "From Navbar");
   const navOptions = (
     <>
       <Link
@@ -225,33 +219,36 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end pr-8">
-          {!user ? (
-            <p className="font-bold decoration-none font-[lilita one] md:text-xl text-green-500">
-              <Link href="/login">Login</Link>
-            </p>
-          ) : (
+          {userPresence === "admin" ||
+          userPresence === "student" ||
+          userPresence === "instructor" ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  {/* <img src={user.photoURL} /> */}
-                  <h1>Image</h1>
+                  <img src="/logo/user.jpg" />
                 </div>
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-orange-500 rounded-box w-52"
+                className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-slate-100 rounded-box w-52"
               >
                 <li className="mb-2">
                   <Link
-                    to="/dashboard/profile"
+                    href="/dashboard/admin/profile"
                     className="justify-between text-base"
                   >
                     Profile
-                    <small className="pl-2 text-xs">{user.displayName}</small>
+                    <small className="pl-2 text-xs uppercase">
+                      {userPresence}
+                    </small>
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link className="text-base" to="dashboard/acquiredClass">
+                  <Link
+                    href="dashboard/admin"
+                    className="text-base"
+                    to="dashboard/profile"
+                  >
                     Dashboard
                   </Link>
                 </li>
@@ -262,6 +259,10 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
+          ) : (
+            <p className="font-bold decoration-none font-[lilita one] md:text-xl text-green-500">
+              <Link href="/login">Login</Link>
+            </p>
           )}
         </div>
       </div>

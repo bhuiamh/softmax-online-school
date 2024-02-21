@@ -11,7 +11,7 @@ export const classesData = [
     detailsLink: "/classes/polytechnic",
     ctaText: "Enroll Now",
     imagePath:
-      "https://lh3.googleusercontent.com/proxy/KUZAoeNTXrjWz0x7LzoaSqEPEQt-7Pr2SwMM1Y-9Rp131x3f6hD0ITPEz9LWcQfn677YaMih8JaMNsVfVXBSj_MnItYKaUbS",
+      "https://www.shutterstock.com/image-photo/classroom-school-without-student-teacher-600nw-1940009296.jpg",
   },
   {
     title: "DUET Admission Preparation",
