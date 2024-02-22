@@ -2,7 +2,8 @@
 import React from "react";
 
 const ProfileCard = () => {
-  const userPresence = localStorage.getItem("isUserPresent");
+  // const userPresence = localStorage.getItem("isUserPresent");
+  const userPresence = "student";
 
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">

@@ -20,7 +20,7 @@ const Contact = () => {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        localStorage.removeItem("isUserPresent");
+        // localStorage.removeItem("isUserPresent");
 
         Swal.fire({
           icon: "success",

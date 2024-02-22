@@ -27,7 +27,8 @@ const PolytechnicClasses = () => {
     return totalPrice;
   };
   const handleEnroll = async () => {
-    const userPresence = localStorage.getItem("isUserPresent");
+    // const userPresence = localStorage.getItem("isUserPresent");
+    const userPresence = "student";
 
     if (
       userPresence === "student" ||

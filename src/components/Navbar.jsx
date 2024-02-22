@@ -1,7 +1,6 @@
 "use client";
 import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
-import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +9,6 @@ const Navbar = () => {
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [jobOpen, setJobOpen] = useState(false);
   const [jobMenuOpen, setJobMenuOpen] = useState(false);
-  const [loggedUser, setLoggedUser] = useState(null);
   // handle Classes
   const handleOnMouseOver = () => {
     setClassesOpen(true);
@@ -46,8 +44,9 @@ const Navbar = () => {
   const handleOutMouseOverJobMenu = () => {
     setJobMenuOpen(false);
   };
-  const userPresence = localStorage.getItem("isUserPresent");
 
+  // const userPresence = localStorage.getItem("isUserPresent");
+  const userPresence = "student";
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -64,7 +63,7 @@ const Navbar = () => {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        localStorage.removeItem("isUserPresent");
+        // localStorage.removeItem("isUserPresent");
         Swal.fire({
           icon: "success",
           title: "You have successfully signed out",
@@ -234,7 +233,7 @@ const Navbar = () => {
                     className="justify-between text-base"
                   >
                     Profile
-                    <small className="pl-2 text-xs uppercase">
+                    <small className="pl-1 text-xs uppercase">
                       {userPresence}
                     </small>
                   </Link>

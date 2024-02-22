@@ -11,7 +11,8 @@ export default function DashboardLayout({ children }) {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const userPresence = localStorage.getItem("isUserPresent");
+  // const userPresence = localStorage.getItem("isUserPresent");
+  const userPresence = "student";
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -28,7 +29,7 @@ export default function DashboardLayout({ children }) {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        localStorage.removeItem("isUserPresent");
+        // localStorage.removeItem("isUserPresent");
         router.push("/");
         Swal.fire({
           icon: "success",
@@ -48,7 +49,8 @@ export default function DashboardLayout({ children }) {
     // Fetch data you need (replace with your actual logic)
 
     // Now check user role and redirect if needed
-    const userPresence = localStorage.getItem("isUserPresent");
+    // const userPresence = localStorage.getItem("isUserPresent");
+    const userPresence = "student";
     if (
       userPresence !== "admin" &&
       userPresence !== "instructor" &&

@@ -25,7 +25,8 @@ const LoginPage = () => {
       formData.email === "student@softmax.com" &&
       formData.password === "softmax"
     ) {
-      localStorage.setItem("isUserPresent", "student");
+      // localStorage.setItem("isUserPresent", "student");
+
       router.push("/dashboard/profile");
       Swal.fire({
         icon: "success",
@@ -35,7 +36,7 @@ const LoginPage = () => {
       formData.email === "instructor@softmax.com" &&
       formData.password === "softmax"
     ) {
-      localStorage.setItem("isUserPresent", "instructor");
+      // localStorage.setItem("isUserPresent", "instructor");
       router.push("/dashboard/profile");
       Swal.fire({
         icon: "success",
@@ -45,7 +46,7 @@ const LoginPage = () => {
       formData.email === "admin@softmax.com" &&
       formData.password === "softmax"
     ) {
-      localStorage.setItem("isUserPresent", "admin");
+      // localStorage.setItem("isUserPresent", "admin");
       router.push("/dashboard/profile");
       Swal.fire({
         icon: "success",
