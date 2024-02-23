@@ -5,14 +5,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Navbar = () => {
-  // const [userPresence, setUserPresence] = useState(null);
+  const [userPresence, setUserPresence] = useState(null);
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const defineUser = localStorage.getItem("isUserPresent");
-  //     setUserPresence(defineUser);
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const defineUser = localStorage.getItem("isUserPresent");
+      setUserPresence(defineUser);
+    }
+  }, []);
 
   const [classesOpen, setClassesOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
@@ -55,7 +55,7 @@ const Navbar = () => {
   };
 
   // const userPresence = localStorage.getItem("isUserPresent");
-  const userPresence = "student";
+  // const userPresence = "student";
 
   const handleLogOut = () => {
     Swal.fire({
