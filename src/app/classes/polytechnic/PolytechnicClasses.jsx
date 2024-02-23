@@ -6,6 +6,15 @@ import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const PolytechnicClasses = () => {
+  const [userPresence, setUserPresence] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const defineUser = localStorage.getItem("isUserPresent");
+      setUserPresence(defineUser);
+    }
+  }, []);
+
   const router = useRouter();
   const [selectedDiv, setSelectedDiv] = useState([]);
   const initialPrice = 0;
@@ -27,9 +36,6 @@ const PolytechnicClasses = () => {
     return totalPrice;
   };
   const handleEnroll = async () => {
-    // const userPresence = localStorage.getItem("isUserPresent");
-    const userPresence = "student";
-
     if (
       userPresence === "student" ||
       userPresence === "admin" ||
@@ -41,12 +47,17 @@ const PolytechnicClasses = () => {
           title: "Class Enrolled Successful",
         });
       }
-      if (!selectedDiv.length) {
+      if (!selectedDiv.length && userPresence === "student") {
         Swal.fire({
           icon: "error",
           title: "Please select semester",
         });
-        // Optionally return or prevent further execution here
+      }
+      if (userPresence === "admin" || userPresence === "instructor") {
+        Swal.fire({
+          icon: "error",
+          title: "The class is only for student",
+        });
       }
     } else {
       Swal.fire({

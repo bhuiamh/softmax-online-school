@@ -3,6 +3,7 @@ import SectionTitle from "@/components/SectionTitle";
 import React from "react";
 
 const Contact = () => {
+  zzz;
   const handleFormSubmit = (e) => {
     e.preventDefault();
     Swal.fire({

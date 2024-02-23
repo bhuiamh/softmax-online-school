@@ -1,10 +1,19 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const [userPresence, setUserPresence] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const defineUser = localStorage.getItem("isUserPresent");
+      setUserPresence(defineUser);
+    }
+  }, []);
+
   const [classesOpen, setClassesOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const [jobOpen, setJobOpen] = useState(false);
@@ -46,7 +55,8 @@ const Navbar = () => {
   };
 
   // const userPresence = localStorage.getItem("isUserPresent");
-  const userPresence = "student";
+  // const userPresence = "student";
+
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -64,6 +74,10 @@ const Navbar = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // localStorage.removeItem("isUserPresent");
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("isUserPresent");
+        }
+
         Swal.fire({
           icon: "success",
           title: "You have successfully signed out",

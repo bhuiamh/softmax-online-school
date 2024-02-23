@@ -5,6 +5,14 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 export default function DashboardLayout({ children }) {
+  const [userPresence, setUserPresence] = useState(null);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const defineUser = localStorage.getItem("isUserPresent");
+      setUserPresence(defineUser);
+    }
+  }, []);
+
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,7 +20,7 @@ export default function DashboardLayout({ children }) {
     setIsMenuOpen(!isMenuOpen);
   };
   // const userPresence = localStorage.getItem("isUserPresent");
-  const userPresence = "student";
+  // const userPresence = "student";
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -30,6 +38,10 @@ export default function DashboardLayout({ children }) {
     }).then((result) => {
       if (result.isConfirmed) {
         // localStorage.removeItem("isUserPresent");
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("isUserPresent");
+        }
+
         router.push("/");
         Swal.fire({
           icon: "success",
