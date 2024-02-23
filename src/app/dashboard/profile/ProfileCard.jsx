@@ -1,9 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ProfileCard = () => {
   // const userPresence = localStorage.getItem("isUserPresent");
-  const userPresence = "student";
+  const [userPresence, setUserPresence] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const defineUser = localStorage.getItem("isUserPresent");
+      setUserPresence(defineUser);
+    }
+  }, []);
 
   return (
     <div className="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">

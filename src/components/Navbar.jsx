@@ -89,7 +89,7 @@ const Navbar = () => {
 
       <div>
         <Link
-          className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-700 hover:text-green-900 relative       "
+          className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-700 hover:text-green-900 relative"
           onMouseOver={handleOnMouseOver}
           onMouseOut={handleOnMouseOut}
           onClick={handleOnClick}
@@ -158,7 +158,7 @@ const Navbar = () => {
       </Link>
 
       <Link
-        className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
+        className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-700 hover:text-green-900"
         href="/contact-us"
       >
         Contact
@@ -168,7 +168,7 @@ const Navbar = () => {
       userPresence === "student" ||
       userPresence === "instructor" ? (
         <Link
-          className="font-bold text-base md:text-xl mx-2 font-[lilita one] text-green-700 hover:text-green-900 bg-transparent hover:bg-transparent"
+          className="font-bold text-base mx-2 font-[lilita one] lg:text-xl text-green-700 hover:text-green-900"
           href="/dashboard/profile"
         >
           Dashboard

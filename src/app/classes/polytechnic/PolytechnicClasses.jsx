@@ -97,7 +97,7 @@ const PolytechnicClasses = () => {
                     <h1 className="text-base font-bold mb-4 text-gray-900">
                       Choose the Semester You Want to Purchase
                     </h1>
-                    <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-1">
+                    <div className="grid grid-cols-4 lg:grid-cols-7 gap-1">
                       {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                         <div
                           key={num}

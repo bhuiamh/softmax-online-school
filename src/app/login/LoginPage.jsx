@@ -26,7 +26,10 @@ const LoginPage = () => {
       formData.password === "softmax"
     ) {
       // localStorage.setItem("isUserPresent", "student");
-
+      if (typeof window !== "undefined") {
+        // Perform localStorage action
+        localStorage.setItem("isUserPresent", "student");
+      }
       router.push("/dashboard/profile");
       Swal.fire({
         icon: "success",
