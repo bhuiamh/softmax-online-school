@@ -38,9 +38,9 @@ export default function DashboardLayout({ children }) {
     }).then((result) => {
       if (result.isConfirmed) {
         // localStorage.removeItem("isUserPresent");
-        if (typeof window !== "undefined") {
-          localStorage.removeItem("isUserPresent");
-        }
+        // if (typeof window !== "undefined") {
+        //   localStorage.removeItem("isUserPresent");
+        // }
 
         router.push("/");
         Swal.fire({

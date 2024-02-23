@@ -73,10 +73,9 @@ const Navbar = () => {
       },
     }).then((result) => {
       if (result.isConfirmed) {
+        // if (typeof window !== "undefined") {
         // localStorage.removeItem("isUserPresent");
-        if (typeof window !== "undefined") {
-          localStorage.removeItem("isUserPresent");
-        }
+        // }
 
         Swal.fire({
           icon: "success",
