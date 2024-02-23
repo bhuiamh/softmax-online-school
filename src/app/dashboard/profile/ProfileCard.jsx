@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 
 const ProfileCard = () => {
-  // const userPresence = localStorage.getItem("isUserPresent");
   const [userPresence, setUserPresence] = useState(null);
 
   useEffect(() => {

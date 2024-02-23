@@ -25,9 +25,7 @@ const LoginPage = () => {
       formData.email === "student@softmax.com" &&
       formData.password === "softmax"
     ) {
-      // localStorage.setItem("isUserPresent", "student");
       if (typeof window !== "undefined") {
-        // Perform localStorage action
         localStorage.setItem("isUserPresent", "student");
       }
       router.push("/dashboard/profile");
@@ -39,9 +37,7 @@ const LoginPage = () => {
       formData.email === "instructor@softmax.com" &&
       formData.password === "softmax"
     ) {
-      // localStorage.setItem("isUserPresent", "instructor");
       if (typeof window !== "undefined") {
-        // Perform localStorage action
         localStorage.setItem("isUserPresent", "instructor");
       }
       router.push("/dashboard/profile");
@@ -53,9 +49,7 @@ const LoginPage = () => {
       formData.email === "admin@softmax.com" &&
       formData.password === "softmax"
     ) {
-      // localStorage.setItem("isUserPresent", "admin");
       if (typeof window !== "undefined") {
-        // Perform localStorage action
         localStorage.setItem("isUserPresent", "admin");
       }
       router.push("/dashboard/profile");

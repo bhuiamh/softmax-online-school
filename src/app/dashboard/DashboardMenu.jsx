@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 const DashboardMenu = () => {
+  const router = useRouter();
   const [userPresence, setUserPresence] = useState(null);
 
   useEffect(() => {
@@ -11,7 +13,6 @@ const DashboardMenu = () => {
       setUserPresence(defineUser);
     }
   }, []);
-  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -34,11 +35,9 @@ const DashboardMenu = () => {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        // localStorage.removeItem("isUserPresent");
-        // if (typeof window !== "undefined") {
-        //   localStorage.removeItem("isUserPresent");
-        // }
-
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("isUserPresent");
+        }
         router.push("/");
         Swal.fire({
           icon: "success",
@@ -117,9 +116,9 @@ const DashboardMenu = () => {
       <Link onClick={toggleMenu} href="/dashboard/change-password">
         Change Password
       </Link>
-      <Link onClick={handleLogOut} href="/">
+      <button className="text-base" onClick={handleLogOut}>
         Logout
-      </Link>
+      </button>
     </>
   );
   //   handleAuthentication();

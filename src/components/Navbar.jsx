@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   const [userPresence, setUserPresence] = useState(null);
 
   useEffect(() => {
@@ -54,9 +55,6 @@ const Navbar = () => {
     setJobMenuOpen(false);
   };
 
-  // const userPresence = localStorage.getItem("isUserPresent");
-  // const userPresence = "student";
-
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -73,10 +71,10 @@ const Navbar = () => {
       },
     }).then((result) => {
       if (result.isConfirmed) {
-        // if (typeof window !== "undefined") {
-        // localStorage.removeItem("isUserPresent");
-        // }
-
+        if (typeof window !== "undefined") {
+          localStorage.removeItem("isUserPresent");
+        }
+        router.push("/");
         Swal.fire({
           icon: "success",
           title: "You have successfully signed out",
@@ -257,9 +255,9 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <a className="text-base" onClick={handleLogOut}>
+                  <button className="text-base" onClick={handleLogOut}>
                     Logout
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
