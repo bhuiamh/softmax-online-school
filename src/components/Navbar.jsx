@@ -229,7 +229,7 @@ const Navbar = () => {
               >
                 <li className="mb-2">
                   <Link
-                    href="/dashboard/admin/profile"
+                    href="/dashboard/profile"
                     className="justify-between text-base"
                   >
                     Profile
@@ -239,11 +239,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="mb-2">
-                  <Link
-                    href="dashboard/admin"
-                    className="text-base"
-                    to="dashboard/profile"
-                  >
+                  <Link href="/dashboard" className="text-base">
                     Dashboard
                   </Link>
                 </li>

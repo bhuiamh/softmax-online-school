@@ -2,7 +2,7 @@
 import SectionTitle from "@/components/SectionTitle";
 import { polytechnicClassesData } from "@/data/ClassesData";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const PolytechnicClasses = () => {
@@ -40,6 +40,13 @@ const PolytechnicClasses = () => {
           icon: "success",
           title: "Class Enrolled Successful",
         });
+      }
+      if (!selectedDiv.length) {
+        Swal.fire({
+          icon: "error",
+          title: "Please select semester",
+        });
+        // Optionally return or prevent further execution here
       }
     } else {
       Swal.fire({
