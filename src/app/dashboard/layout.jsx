@@ -62,7 +62,7 @@ export default function DashboardLayout({ children }) {
 
     // Now check user role and redirect if needed
     // const userPresence = localStorage.getItem("isUserPresent");
-    const userPresence = "student";
+    // const userPresence = "student";
     if (
       userPresence !== "admin" &&
       userPresence !== "instructor" &&
