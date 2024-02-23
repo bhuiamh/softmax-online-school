@@ -6,15 +6,14 @@ import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 const PolytechnicClasses = () => {
-  // const [userPresence, setUserPresence] = useState(null);
+  const [userPresence, setUserPresence] = useState(null);
 
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     const defineUser = localStorage.getItem("isUserPresent");
-  //     setUserPresence(defineUser);
-  //   }
-  // }, []);
-  const userPresence = "student";
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const defineUser = localStorage.getItem("isUserPresent");
+      setUserPresence(defineUser);
+    }
+  }, []);
 
   const router = useRouter();
   const [selectedDiv, setSelectedDiv] = useState([]);
